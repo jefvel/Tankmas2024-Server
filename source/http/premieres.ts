@@ -8,38 +8,24 @@ const premieres = [
     url: 'https://uploads.ungrounded.net/alternate/6268000/6268139_alternate_291404.720p.mp4?1734069205',
   },
   {
-    name: "Dr. Good's Movie",
-    time: '2024-12-21 05:00PM',
+    name: "Sketch Collab 2024",
+    time: '2024-12-25 05:00PM',
+    length: 401000,
+    url: 'https://uploads.ungrounded.net/alternate/6240000/6240927_alternate_292581.720p.mp4?1734838303',
+  },
+  {
+    name: "NG TV",
+    time: "2024-12-25 06:00PM",
+    length: 138000,
+    url: "https://uploads.ungrounded.net/tmp/6184000/6184852/file/alternate/alternate_1.mp4",
+  },
+  {
+    name: "Fulpware",
+    time: '2024-12-31 05:00PM',
     length: 530000,
     url: 'https://uploads.ungrounded.net/alternate/1865000/1865703_alternate_184213.720p.mp4?1716028231',
   },
-  /*
-  {
-    name: "Dr. Good's Movie",
-    time: '2024-12-13 02:16PM',
-    length: 653000,
-    url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
-  },
-  {
-    name: "Dr. Good's Movie 2",
-    time: '2024-12-14 02:16PM',
-    length: 734000,
-    url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
-  },
-  {
-    name: "Dri. Good's Movie 4",
-    time: '2024-12-17 04:16PM',
-    length: 594000,
-    url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4',
-  },
-  {
-    name: "Dri. Go3od's Movie 4",
-    time: '2024-12-21 00:47AM',
-    length: 887000,
-    url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4',
-  },
-  */
-];
+]
 
 const get_premieres = (_req: Request) => {
   const premiere_list = premieres.map(({ name, time, url, length }) => {
