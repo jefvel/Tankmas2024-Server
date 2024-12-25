@@ -9,15 +9,15 @@ const premieres = [
   },
   {
     name: "Sketch Collab 2024",
-    time: '2024-12-25 05:00PM',
-    length: 401000,
+    time: '2024-12-25 03:00PM',
+    length: 720000,
     url: 'https://uploads.ungrounded.net/alternate/6240000/6240927_alternate_292581.720p.mp4?1734838303',
   },
   {
     name: "NG TV",
     time: "2024-12-25 06:00PM",
-    length: 138000,
-    url: "https://uploads.ungrounded.net/tmp/6184000/6184852/file/alternate/alternate_1.mp4",
+    length: 6567000,
+    url: "https://uploads.ungrounded.net/tmp/6184000/6184852/file/alternate/alternate_1.720p.mp4?f1735146249",
   },
   {
     name: "Fulpware",
