@@ -77,6 +77,8 @@ class TankmasServer {
     this._load_stored_user_ids();
 
     this.ng_heartbeat = new NewgroundsHeartbeat();
+    
+    console.log('Started tankmas!');
   }
 
   /**
@@ -231,6 +233,7 @@ class TankmasServer {
   }
 
   tick = () => {
+    console.log('tick');
     this.last_tick_time = Date.now();
     const updated_users: User[] = [];
     for (const user of this.user_list) {
