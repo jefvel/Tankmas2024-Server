@@ -177,6 +177,8 @@ class TankmasServer {
         };
 
     Deno.serve(options, async (req, info) => {
+      console.log('new request');
+      console.log(req);
       try {
         let res = await this.websockets.handle_request(req, info);
         if (res) return res;
