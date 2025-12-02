@@ -205,7 +205,7 @@ class TankmasServer {
 
     this.tick();
 
-    this.await_command();
+    //this.await_command();
   };
 
   input = new InputLoop();
@@ -221,7 +221,7 @@ class TankmasServer {
       logger.info(`Unknown command "${name}"`);
     }
 
-    this.await_command();
+    //this.await_command();
   };
 
   get_time_since_tick() {
@@ -456,8 +456,8 @@ class TankmasServer {
 
     if (this.time_since_backup_ms >= this.backup_interval_ms) {
       this.time_since_backup_ms = 0;
-      this.db.backup();
-      logger.info('Created backup of database.');
+      //this.db.backup();
+      //logger.info('Created backup of database.');
     }
   };
 
