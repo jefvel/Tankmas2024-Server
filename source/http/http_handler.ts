@@ -17,6 +17,7 @@ const webserver_handler = async (
   req: Request,
   server: TankmasServer
 ): Promise<Response> => {
+  console.log('incoming request', req);
   const headers = new Headers();
   headers.set(
     'Access-Control-Allow-Origin',
