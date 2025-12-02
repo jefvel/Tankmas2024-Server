@@ -163,15 +163,9 @@ class TankmasServer {
     this.websockets.on('client_disconnected', this.ng_heartbeat.remove_session);
     this.ng_heartbeat.start();
 
-    const certFile = Deno.env.get('CA_CERT_FILE') ?? 'ca/cert.pem';
-    const keyFile = Deno.env.get('CA_KEY_FILE') ?? 'ca/key.pem';
-
     const port = this.config.server_port;
-    console.log('starting on ', port);
 
     Deno.serve({port}, async (req, info) => {
-      console.log('new request');
-      console.log(req);
       try {
         let res = await this.websockets.handle_request(req, info);
         if (res) return res;
