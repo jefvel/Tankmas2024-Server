@@ -42,5 +42,5 @@ if (import.meta.main) {
     dev_mode,
   });
 
-  server.run();
+  await server.run();
 }

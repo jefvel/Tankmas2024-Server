@@ -167,18 +167,9 @@ class TankmasServer {
     const keyFile = Deno.env.get('CA_KEY_FILE') ?? 'ca/key.pem';
 
     const port = this.config.server_port;
-    const options = this.config.use_tls
-      ? {
-          port,
-          keyFormat: 'pem',
-          key: Deno.readTextFileSync(keyFile),
-          cert: Deno.readTextFileSync(certFile),
-        }
-      : {
-          port,
-        };
+    console.log('starting on ', port);
 
-    Deno.serve(options, async (req, info) => {
+    Deno.serve({port}, async (req, info) => {
       console.log('new request');
       console.log(req);
       try {
@@ -233,7 +224,6 @@ class TankmasServer {
   }
 
   tick = () => {
-    console.log('tick');
     this.last_tick_time = Date.now();
     const updated_users: User[] = [];
     for (const user of this.user_list) {
