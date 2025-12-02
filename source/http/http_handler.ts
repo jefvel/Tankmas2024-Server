@@ -8,7 +8,8 @@ const ROOMS_ROUTE = new URLPattern({ pathname: '/rooms*' });
 
 const SAVES_ROUTE = new URLPattern({ pathname: '/saves' });
 
-const HEALTHCHECK_ROUTE = new URLPattern({ pathname: '/healthcheck' });
+const HEALTHCHECK_ROUTE = new URLPattern({ pathname: '/health' });
+const MAIN_ROUTE = new URLPattern({ pathname: '/' });
 
 const PREMIERES_ROUTE = new URLPattern({ pathname: '/premieres' });
 
@@ -17,7 +18,6 @@ const webserver_handler = async (
   req: Request,
   server: TankmasServer
 ): Promise<Response> => {
-  console.log('incoming request', req);
   const headers = new Headers();
   headers.set(
     'Access-Control-Allow-Origin',
@@ -83,7 +83,7 @@ const webserver_handler = async (
     return get_premieres(req);
   }
 
-  if (SAVES_ROUTE.exec(req.url)) {
+  if (HEALTHCHECK_ROUTE.exec(req.url)) {
     return Response.json({ok: true});
   }
 
@@ -113,6 +113,10 @@ const webserver_handler = async (
       server.db.store_user_save(username, body.data);
       return Response.json({ data: { ok: true } }, { status: 200, headers });
     }
+  }
+
+  if (MAIN_ROUTE.exec(req.url)) {
+    return Response.json({app: 'Tankmas Server 2024'});
   }
 
   return new Response('Not found.', { status: 404, headers });
