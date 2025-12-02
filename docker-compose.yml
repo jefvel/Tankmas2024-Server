@@ -1,0 +1,13 @@
+services:
+  server:
+    image: tankmas2024-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - tankmas_2024:/data/:rw
+
+volumes:
+  tankmas_2024:
+    name: tankmas_2024
