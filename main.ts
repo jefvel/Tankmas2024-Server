@@ -18,6 +18,7 @@ if (import.meta.main) {
 
   const port = Deno.env.get('SERVER_PORT');
   const server_port = port ? Number.parseInt(port) : config.server_port;
+  console.log(`Starting tankmas server on port ${port}...`);
 
   const dev_mode = Deno.env.has('DEV_MODE')
     ? Deno.env.get('DEV_MODE') === 'true'
