@@ -4,10 +4,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    ports:
+      - '15001:15001'
     restart: unless-stopped
     volumes:
-      - tankmas_2024:/data/:rw
+      - tankmas2024data:/data/:rw
 
 volumes:
-  tankmas_2024:
-    name: tankmas_2024
+  tankmas2024data:
+    name: tankmas2024data
