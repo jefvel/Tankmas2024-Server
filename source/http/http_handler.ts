@@ -8,6 +8,8 @@ const ROOMS_ROUTE = new URLPattern({ pathname: '/rooms*' });
 
 const SAVES_ROUTE = new URLPattern({ pathname: '/saves' });
 
+const HEALTHCHECK_ROUTE = new URLPattern({ pathname: '/healthcheck' });
+
 const PREMIERES_ROUTE = new URLPattern({ pathname: '/premieres' });
 
 // In this file you can handle requests that are not websocket related.
@@ -78,6 +80,10 @@ const webserver_handler = async (
 
   if (PREMIERES_ROUTE.exec(req.url)) {
     return get_premieres(req);
+  }
+
+  if (SAVES_ROUTE.exec(req.url)) {
+    return Response.json({ok: true});
   }
 
   // Save/load user saves.
